@@ -133,6 +133,14 @@ Behavior:
 - Push to `main`: build and push `latest` + `sha-<short>`
 - Push tag `v*`: build and push `v*` + `sha-<short>`
 
+Skip this workflow for specific commits/PRs by adding one of these markers to
+the commit message (push) or PR title:
+
+- `[ci-skip]`
+- `[skip ci]`
+- `[ci skip]`
+- `[no ci]`
+
 ## Notes
 
 - Outline commonly runs with host networking for simplicity.
