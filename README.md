@@ -29,7 +29,7 @@ to this preconfigured image.
 2. On your Linux server, deploy with the official installer via this wrapper:
 
 ```bash
-SB_IMAGE=ghcr.io/<owner>/outline-vpn-docker:latest \
+SB_IMAGE=ghcr.io/raymondjxu/outline-vpn-docker:latest \
 sh scripts/deploy.sh --hostname <server-ip-or-hostname>
 ```
 
@@ -41,7 +41,7 @@ This runs the official script from Outline:
 
 ## Quick Start (Direct Docker Run)
 
-Replace `<owner>` with your GitHub org/user:
+Replace `raymondjxu` with your GitHub org/user:
 
 ```bash
 docker run -d \
@@ -50,7 +50,7 @@ docker run -d \
 	--net host \
 	-v /opt/outline/persisted-state:/opt/outline/persisted-state \
 	-e SB_STATE_DIR=/opt/outline/persisted-state \
-	ghcr.io/<owner>/outline-vpn-docker:latest
+	ghcr.io/raymondjxu/outline-vpn-docker:latest
 ```
 
 View startup logs:
@@ -101,7 +101,7 @@ IMAGE_NAME=outline-vpn-docker IMAGE_TAGS="latest" sh scripts/build.sh
 Build and push image (after `docker login`):
 
 ```bash
-IMAGE_NAME=ghcr.io/<owner>/outline-vpn-docker \
+IMAGE_NAME=ghcr.io/raymondjxu/outline-vpn-docker \
 IMAGE_TAGS="latest sha-$(git rev-parse --short HEAD)" \
 PUSH_IMAGE=true \
 sh scripts/build.sh
@@ -110,14 +110,14 @@ sh scripts/build.sh
 Deploy on a server using the official installer and your image:
 
 ```bash
-SB_IMAGE=ghcr.io/<owner>/outline-vpn-docker:latest \
+SB_IMAGE=ghcr.io/raymondjxu/outline-vpn-docker:latest \
 sh scripts/deploy.sh --hostname <server-ip-or-hostname>
 ```
 
 Pass-through installer flags are supported:
 
 ```bash
-SB_IMAGE=ghcr.io/<owner>/outline-vpn-docker:latest \
+SB_IMAGE=ghcr.io/raymondjxu/outline-vpn-docker:latest \
 sh scripts/deploy.sh --hostname vpn.example.com --api-port 443 --keys-port 8443
 ```
 
